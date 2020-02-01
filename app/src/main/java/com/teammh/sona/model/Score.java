@@ -1,9 +1,8 @@
-package com.teammh.sona;
+package com.teammh.sona.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Comparator;
-import java.util.Date;
 
 public class Score {
     private Calendar calDate;

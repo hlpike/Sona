@@ -1,4 +1,4 @@
-package com.teammh.sona;
+package com.teammh.sona.model;
 
 import java.util.ArrayList;
 

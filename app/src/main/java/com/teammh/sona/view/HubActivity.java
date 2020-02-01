@@ -1,8 +1,10 @@
-package com.teammh.sona;
+package com.teammh.sona.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.teammh.sona.R;
 
 public class HubActivity extends AppCompatActivity {
 
