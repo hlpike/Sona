@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">MyApp</string>
-    <string name ="Title1">Resources</string>
+    <string name="Title1">Resources</string>
 
     <string name="sign_out">Sign Out</string>
 
-    <string name ="Resource1">National Suicide Prevention Lifeline</string>
-    <string name ="Resource2">Crisis Text Line</string>
-    <string name ="Resource3">National Domestic Violence Hotline</string>
-    <string name ="Resource4">National Sexual Assault Hotline</string>
+    <string name="Resource1">National Suicide Prevention Lifeline</string>
+    <string name="Resource2">Crisis Text Line</string>
+    <string name="Resource3">National Domestic Violence Hotline</string>
+    <string name="Resource4">National Sexual Assault Hotline</string>
+    <string name="title_activity_resources">ResourcesActivity</string>
 </resources>
