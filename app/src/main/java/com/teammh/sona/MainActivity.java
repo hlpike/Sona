@@ -14,7 +14,6 @@ import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser currUser;
 
     private Button signOut;
+    private Button increment;
+    private int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         createSignInIntent();
 
+        //testing variable
+        counter = -1;
+
         signOut = (Button)findViewById(R.id.sign_out);
         signOut.setEnabled(false);
         signOut.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +61,17 @@ public class MainActivity extends AppCompatActivity {
                 signOut();
             }
         });
+        increment = (Button)findViewById(R.id.increment);
+        increment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Increment");
+                if (counter != -1) {
+                    counter++;
+                }
+            }
+        });
 
-        /*
         //create variable to interact with database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
@@ -82,18 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
-         */
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        if (currUser != null) {
-            currUser = mAuth.getCurrentUser();
-            Toast.makeText(MainActivity.this,
-                    "User Name: " + currUser.getDisplayName(),
-                    Toast.LENGTH_LONG);
-        }
     }
 
     public void updateUI() {
@@ -146,6 +147,10 @@ public class MainActivity extends AppCompatActivity {
                 currUser = FirebaseAuth.getInstance().getCurrentUser();
                 Log.d(TAG, "Sign in successful. Username: " + currUser.getDisplayName());
                 updateUI();
+
+                //recieve variable from database and fill it in
+                mAuth.get
+
                 signOut.setEnabled(true);
             } else {
                 // Sign in failed. If response is null the user canceled the
