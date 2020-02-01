@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1018670602297",
+    "firebase_url": "https://sona-71f0a.firebaseio.com",
+    "project_id": "sona-71f0a",
+    "storage_bucket": "sona-71f0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018670602297:android:e06c32b1d770ae27a855e8",
+        "android_client_info": {
+          "package_name": "com.teammh.sona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018670602297-8qpqmg60mmqaiil2012l0l2sl5ckuv9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teammh.sona",
+            "certificate_hash": "38470a7880bfe4fe23b636f3c30e834e272d6b63"
+          }
+        },
+        {
+          "client_id": "1018670602297-5f0mvamcckj1pjaplviqceqdgmuah18d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs9CrL1vbSbnN-YIlbDMaN__3iBYwky1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018670602297-5f0mvamcckj1pjaplviqceqdgmuah18d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

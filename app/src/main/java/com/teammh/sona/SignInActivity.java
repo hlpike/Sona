@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,15 +30,25 @@ public class SignInActivity extends AppCompatActivity {
     public static final int RC_SIGN_IN = 123;
     public static final String TAG = SignInActivity.class.getSimpleName();
 
+    private FirebaseAuth mAuth;
+    private FirebaseUser currUser;
+
+    private Button signOut;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        mAuth = FirebaseAuth.getInstance();
+
         Toast.makeText(this,
                     "Firebase connection success",
                     Toast.LENGTH_LONG).show();
 
+        createSignInIntent();
+
+        /*
         //create variable to interact with database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
@@ -60,6 +72,76 @@ public class SignInActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+         */
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (currUser != null) {
+            currUser = mAuth.getCurrentUser();
+            Toast.makeText(SignInActivity.this,
+                    "User Name: " + currUser.getDisplayName(),
+                    Toast.LENGTH_LONG);
+        }
+    }
+
+    public void createAccount(String email, String password) {
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            currUser = mAuth.getCurrentUser();
+                            Toast.makeText(SignInActivity.this,
+                                    "User Name: " + currUser.getDisplayName(),
+                                    Toast.LENGTH_LONG);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                        // ...
+                    }
+                });
+    }
+
+    public void signIn(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            currUser = mAuth.getCurrentUser();
+                            updateUI();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            currUser = null;
+                            updateUI();
+                        }
+
+                        // ...
+                    }
+                });
+    }
+
+    public void updateUI() {
+        String username = "";
+        if (currUser != null) {
+            username = currUser.getDisplayName();
+        }
+        Toast.makeText(SignInActivity.this,
+                "User Name: " + username,
+                Toast.LENGTH_LONG);
     }
 
     public void createSignInIntent() {
@@ -111,13 +193,15 @@ public class SignInActivity extends AppCompatActivity {
 
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                // ...
+                currUser = FirebaseAuth.getInstance().getCurrentUser();
+                updateUI();
+                signOut.setEnabled(true);
             } else {
                 // Sign in failed. If response is null the user canceled the
                 // sign-in flow using the back button. Otherwise check
                 // response.getError().getErrorCode() and handle the error.
                 // ...
+                Log.d(TAG, "Sign-in failed");
             }
         }
     }
