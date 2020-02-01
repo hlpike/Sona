@@ -1,4 +1,4 @@
-package com.teammh.sona;
+package com.teammh.sona.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +14,6 @@ import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,19 +21,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.teammh.sona.R;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class SignInActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     public static final int RC_SIGN_IN = 123;
-    public static final String TAG = SignInActivity.class.getSimpleName();
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     private FirebaseAuth mAuth;
     private FirebaseUser currUser;
 
     private Button signOut;
+    private Button increment;
+    private int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,20 +45,34 @@ public class SignInActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         Toast.makeText(this,
-                    "Firebase connection success",
-                    Toast.LENGTH_LONG).show();
+                "Firebase connection success",
+                Toast.LENGTH_LONG).show();
 
         createSignInIntent();
 
+        //testing variable
+        counter = -1;
+
+        signOut = (Button)findViewById(R.id.sign_out);
         signOut.setEnabled(false);
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG, "Sign out");
                 signOut();
             }
         });
+        increment = (Button)findViewById(R.id.increment);
+        increment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Increment");
+                if (counter != -1) {
+                    counter++;
+                }
+            }
+        });
 
-        /*
         //create variable to interact with database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
@@ -80,18 +96,6 @@ public class SignInActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
-         */
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        if (currUser != null) {
-            currUser = mAuth.getCurrentUser();
-            Toast.makeText(SignInActivity.this,
-                    "User Name: " + currUser.getDisplayName(),
-                    Toast.LENGTH_LONG);
-        }
     }
 
     public void updateUI() {
@@ -99,12 +103,13 @@ public class SignInActivity extends AppCompatActivity {
         if (currUser != null) {
             username = currUser.getDisplayName();
         }
-        Toast.makeText(SignInActivity.this,
+        Toast.makeText(MainActivity.this,
                 "User Name: " + username,
                 Toast.LENGTH_LONG);
     }
 
     public void createSignInIntent() {
+        Log.d(TAG, "Signing in...");
         // Choose authentication providers
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build(),
@@ -141,7 +146,12 @@ public class SignInActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
                 currUser = FirebaseAuth.getInstance().getCurrentUser();
+                Log.d(TAG, "Sign in successful. Username: " + currUser.getDisplayName());
                 updateUI();
+
+                //recieve variable from database and fill it in
+                mAuth.get
+
                 signOut.setEnabled(true);
             } else {
                 // Sign in failed. If response is null the user canceled the

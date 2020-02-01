@@ -3,6 +3,8 @@
     <string name="Title1">Resources</string>
 
     <string name="sign_out">Sign Out</string>
+    <string name="increment">Increment</string>
+    <string name="var_label">Variable:</string>
 
     <string name="Resource1">National Suicide Prevention Lifeline</string>
     <string name="Resource2">Crisis Text Line</string>
