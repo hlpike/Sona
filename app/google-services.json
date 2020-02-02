@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1018670602297-jg57f99dsdgt7f8ldfg1cnlhdqsiuqg0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teammh.sona",
+            "certificate_hash": "b366e6416a75d4bdc4e9ca1a10036e8c90e44249"
+          }
+        },
+        {
           "client_id": "1018670602297-8qpqmg60mmqaiil2012l0l2sl5ckuv9i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
