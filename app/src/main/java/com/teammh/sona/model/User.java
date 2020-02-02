@@ -11,6 +11,7 @@ public class User {
     public User(String username, String email) {
         this.username = username;
         this.email = email;
+        picURL = "";
         scores = new ArrayList<Score>();
     }
 
@@ -35,6 +36,10 @@ public class User {
     }
 
     public Score getScore(int n) {
-        return scores.get(n);
+        if (scores != null && scores.size() > n) {
+            return scores.get(n);
+        } else {
+            return null;
+        }
     }
 }

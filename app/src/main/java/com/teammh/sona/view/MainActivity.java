@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.teammh.sona.R;
+import com.teammh.sona.model.Score;
 import com.teammh.sona.model.User;
 
 import java.util.Arrays;
@@ -76,9 +79,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
         //create variable to interact with database
         mDatabase = FirebaseDatabase.getInstance();
+
+        /*
         DatabaseReference myRef = mDatabase.getReference("message");
 
         // Write a message to the database
@@ -110,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Toast.makeText(MainActivity.this,
                 "User Name: " + username,
-                Toast.LENGTH_LONG);
+                Toast.LENGTH_LONG).show();
     }
 
     public void createSignInIntent() {
@@ -157,10 +161,61 @@ public class MainActivity extends AppCompatActivity {
 
                 //update current user info
                 currUserInfo = new User(currUser.getDisplayName(), currUser.getEmail());
-                currUserInfo.setPicURL(currUser.getPhotoUrl().toString());
+                if (currUser.getPhotoUrl() != null) {
+                    currUserInfo.setPicURL(currUser.getPhotoUrl().toString());
+                }
+                currUserInfo.addScore(0);
 
-                //check for user in database
-                //mDatabase.child("users").child(currUser.getUid()).setValue(currUserInfo);
+                //add user to database
+                DatabaseReference usersRef = mDatabase.getReference().child("users");
+                usersRef.child(currUser.getUid()).setValue(currUserInfo)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                // Write was successful!
+                                Log.d(TAG, "Database write successful!");
+                                Toast.makeText(MainActivity.this,
+                                        "User successfully added",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Write failed
+                                Log.d(TAG, "Database write failed.");
+                                Toast.makeText(MainActivity.this,
+                                        "User was not added",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        });
+                ValueEventListener userListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        /*
+                        // Get Post object and use the values to update the UI
+                        User userTemp = dataSnapshot.getValue(User.class);
+                        if (userTemp.getEmail().contentEquals(currUserInfo.getEmail())) {
+                            Log.d(TAG, "Database write successful!");
+                            Toast.makeText(MainActivity.this,
+                                    "User successfully added",
+                                    Toast.LENGTH_LONG).show();
+                            currUserInfo = userTemp;
+                        }
+                         */
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Getting Post failed, log a message
+                        Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                        // [START_EXCLUDE]
+                        Toast.makeText(MainActivity.this, "Failed to load post.",
+                                Toast.LENGTH_LONG).show();
+                        // [END_EXCLUDE]
+                    }
+                };
+                usersRef.addValueEventListener(userListener);
 
                 signOut.setEnabled(true);
             } else {
