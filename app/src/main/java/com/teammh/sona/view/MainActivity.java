@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
         //create variable to interact with database
         mDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = mDatabase.getReference("message");
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+         */
     }
 
     public void updateUI() {
