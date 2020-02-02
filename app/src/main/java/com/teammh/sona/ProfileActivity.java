@@ -29,5 +29,6 @@ public class ProfileActivity extends AppCompatActivity {
         userTextView = (TextView)findViewById(R.id.profile_user);
         profileImage = (ImageView)findViewById(R.id.imageView);
         graphImage = (ImageView)findViewById(R.id.profile_graph);
+
     }
 }
