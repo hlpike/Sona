@@ -44,7 +44,7 @@
         <item>I am working toward a long term goal</item>
         <item>I have good memory</item>
     </array>
-        <!-- slide 1 -->
+    <!-- slide 1 -->
     <string name="questionaire">Questionaire</string>
 
     <!-- slide 1 -->
@@ -87,7 +87,7 @@
     <string name="scale_3">3</string>
     <string name="next">Next</string>
 
-    <string-array name= "recs_now">
+    <string-array name="recs_now">
         <item>Write down 3+ good qualities about yourself</item>
         <item>Request from friends, family or loved ones to send you a list of 3+ things they
             appreciate about you
@@ -95,7 +95,7 @@
         <item>Look for an exciting event and write it in your calendar</item>
     </string-array>
 
-    <string-array name= "recs_daily">
+    <string-array name="recs_daily">
         <item>Write down one thing you\'re grateful for</item>
         <item>Write down one good thing that happened today</item>
         <item>Wear clothes that make you feel good</item>
@@ -106,10 +106,21 @@
         <item>Remove all electronics before going to sleep</item>
     </string-array>
 
-    <string-array name= "recs_weekly">
+    <string-array name="recs_weekly">
         <item>Yoga class</item>
         <item>Dancing class</item>
         <item>Cycling class</item>
         <item>Meditate</item>
     </string-array>
+
+    <string name="result_string">Your mood today is </string>
+    <string name="output_1">below average</string>
+    <string name="output_2">average</string>
+    <string name="output_3">above average</string>
+    <string name="output_4">great</string>
+    <string name="recommends">Sona recommends</string>
+    <string name="rec1">meditation</string>
+    <string name="rec2">yoga</string>
+    <string name="rec3">cycling</string>
+    <string name="rec4">dancing</string>
 </resources>
