@@ -95,7 +95,7 @@
     <ImageView
         android:id="@+id/profile_graph"
         android:layout_width="270.5dp"
-        android:layout_height="270dp"
+        android:layout_height="230dp"
         android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

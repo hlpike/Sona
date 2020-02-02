@@ -17,7 +17,8 @@
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#3376BC"
-        android:textSize="45sp"
+        android:textSize="50sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +42,9 @@
         android:background="#81ADC8"
         android:text="@string/home"
         android:textColor="#AFE059"
-        app:layout_constraintWidth_percent=".33"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".33" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -73,11 +74,12 @@
         android:id="@+id/hub_about_day2"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:background="#0EC6C0"
+        android:background="#afe059"
+        android:fontFamily="sans-serif"
         android:text="@string/feeling"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:textSize="27sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
