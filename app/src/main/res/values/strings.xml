@@ -9,35 +9,57 @@
     <string name="Resource3">National Domestic Violence Hotline</string>
     <string name="Resource4">National Sexual Assault Hotline</string>
     <string name="title_activity_resources">ResourcesActivity</string>
-    
-    <array name="questionnaire"> 
-        <item>I am happy</item>
-        <item>My family makes me happy</item>
-        <item>My friends make me happy</item>
-        <item>My career makes me happy</item>
-        <item>I am pleased with the way I am</item>
-        <item>I am pleased with my approach to life</item>
-        <item>I am rarely interested in other people</item>
-        
-        <item>I feel tired/low energy</item>
-        <item>I have feelings of guilt</item>
-        <item>I I feel like a failure</item>
-        <item>I have difficulty making decisions</item>
-        <item>I have little interest in doing things</item>
-        <item>I feel hopeless</item>
-        <item>I sleep too much</item>
-        <item>I don't sleep enough</item>
-        <item>I am working toward a long term goal</item>
-        <item>I have good memory</item>
-    </array>
-    
-    <array name= "recs_now">  
+
+        <!-- slide 1 -->
+    <string name="questionaire">Questionaire</string>
+
+    <!-- slide 1 -->
+    <string name="happiness">Happiness (On Scale of 1-3)</string>
+    <string name="i_am_happy">I am happy</string>
+    <string name="family_happy">My Family makes me happy</string>
+    <string name="friend_happy">My friends make me happy</string>
+    <string name="career_happy">My career makes me happy</string>
+    <string name="pleased">I am pleased with the way I am</string>
+    <string name="pleased_approach">I am pleased with my approach to life</string>
+    <string name="rarely_interested">I am rarely interested in other people</string>
+
+    <!-- slide 2 -->
+
+    <string name="depression">Depression (On Scale of 1-3)</string>
+    <string name="tired">I feel tired</string>
+    <string name="guilt">I have feeling of guilt</string>
+    <string name="failure">I feel like a failure</string>
+    <string name="decisions">I have difficulty making decisions</string>
+    <string name="little_interest">I have little interest in doing things</string>
+    <string name="hopeless">I feel hopeless</string>
+    <string name="sleep">I sleep too much</string>
+
+    <!-- slide 3 -->
+
+    <string name="anxiety">Anxiety (On Scale of 1-3)</string>
+    <string name="relax">I am able to relax</string>
+    <string name="upsetting">I focus on upsetting events in my life</string>
+    <string name="happy">I am as happy as anyone around me</string>
+    <string name="snap_day">When someone snaps at me, I think about it rest of day</string>
+    <string name="fearful">I am fearful for no reason</string>
+    <string name="muscles">My muscles are tense, aching or sore</string>
+    <string name="frightened">I am easily frightened</string>
+
+    <!-- common -->
+
+    <string name="scale">Scale of 1-3</string>
+    <string name="scale_1">1</string>
+    <string name="scale_2">2</string>
+    <string name="scale_3">3</string>
+    <string name="next">Next</string>
+
+    <array name= "recs_now">
         <item>Write down 3+ good qualities about yourself</item>
         <item>Request from friends, family or loved ones to send you a list of 3+ things they appreciate about you</item>
         <item>Look for an exciting event and write it in your calendar</item>
     </array>
-        
-    <array name= "recs_daily"> 
+
+    <array name= "recs_daily">
         <item>Write down one thing you're grateful for</item>
         <item>Write down one good thing that happened today</item>
         <item>Wear clothes that make you feel good</item>
@@ -47,8 +69,8 @@
         <item>Go on a ten minute walk</item>
         <item>Remoe all electronics before going to sleep</item>
     </array>
-    
-    <array name= "recs_weekly"> 
+
+    <array name= "recs_weekly">
         <item>Yoga class</item>
         <item>Dancing class</item>
         <item>Cycling class</item>
