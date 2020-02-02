@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="600dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/result_text_color"
@@ -33,5 +33,43 @@
             android:textAlignment="center"
             android:id="@+id/recommends"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/hub_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="#81ADC8"
+        android:text="@string/home"
+        android:textColor="#AFE059"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barChart"
+        app:layout_constraintWidth_percent=".33" />
+
+
+    <Button
+        android:id="@+id/hub_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#81ADC8"
+        android:text="@string/info"
+        android:textColor="#AFE059"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent=".33" />
+
+    <Button
+        android:id="@+id/hub_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#81ADC8"
+        android:text="@string/profile"
+        android:textColor="#AFE059"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/hub_info"
+        app:layout_constraintStart_toEndOf="@+id/hub_home"
+        app:layout_constraintWidth_percent=".33" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

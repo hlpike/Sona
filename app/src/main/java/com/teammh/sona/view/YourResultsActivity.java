@@ -2,8 +2,11 @@ package com.teammh.sona.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
@@ -17,6 +20,7 @@ import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
+import com.teammh.sona.ProfileActivity;
 import com.teammh.sona.R;
 
 import java.util.ArrayList;
@@ -29,6 +33,7 @@ public class YourResultsActivity extends AppCompatActivity {
     public static final int NB_QUALITIES = 3;
     private RadarChart chart;
     private TextView result, recommend;
+    Button profile, home, info;
     private String[] qualities = new String[] {"Happiness", "Depression", "Anxiety"};
 
     @Override
@@ -38,6 +43,9 @@ public class YourResultsActivity extends AppCompatActivity {
         chart = findViewById(R.id.chart);
         result = findViewById(R.id.result);
         recommend = findViewById(R.id.recommends);
+        profile = findViewById(R.id.hub_profile);
+        home = findViewById(R.id.hub_home);
+        info = findViewById(R.id.hub_info);
         chart.setBackgroundColor(WHITE);
         chart.getDescription().setEnabled(false);
         chart.setWebLineWidth(1f);
@@ -108,7 +116,7 @@ public class YourResultsActivity extends AppCompatActivity {
             recommend.setText(getResources().getString(R.string.recommends) + " " + getResources().getString(R.string.rec1));
         }
 
-        RadarDataSet set1 = new RadarDataSet(user, "Mayank");
+        RadarDataSet set1 = new RadarDataSet(user, "Hayley");
         set1.setColor(Color.RED);
         set1.setFillColor(Color.RED);
         set1.setDrawFilled(true);
@@ -127,5 +135,38 @@ public class YourResultsActivity extends AppCompatActivity {
 
         chart.setData(data);
         chart.invalidate();
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //you can use anything in place of i
+                Intent i = new Intent(YourResultsActivity.this, ProfileActivity.class);
+                startActivity(i);
+
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //you can use anything in place of i
+                Intent i = new Intent(YourResultsActivity.this, MainActivity.class);
+                startActivity(i);
+
+            }
+        });
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //you can use anything in place of i
+                Intent i = new Intent(YourResultsActivity.this, ResourcesActivity.class);
+                startActivity(i);
+
+            }
+        });
     }
 }

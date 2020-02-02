@@ -23,6 +23,7 @@
         android:id="@+id/hub_home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
         android:background="#81ADC8"
         android:text="@string/home"
         android:textColor="#AFE059"
@@ -87,33 +88,34 @@
         android:text="@string/summary"
         android:textColor="#3376BC"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/profile_graph"
+        app:layout_constraintBottom_toTopOf="@+id/barChart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_log_out" />
 
-    <ImageView
-        android:id="@+id/profile_graph"
-        android:layout_width="270.5dp"
-        android:layout_height="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pofile_weekly_sum"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[5]" />
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/hub_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </com.github.mikephil.charting.charts.BarChart>
 
     <TextView
         android:id="@+id/profile_resources"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:lines="2"
         android:text="@string/resources"
         android:textColor="#3376BC"
         android:textSize="20sp"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/hub_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_graph" />
+        app:layout_constraintTop_toBottomOf="@+id/barChart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
