@@ -355,7 +355,8 @@
                 android:layout_height="wrap_content"
                 android:background="#efc08b"
                 android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme" />
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:title="Tools"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
