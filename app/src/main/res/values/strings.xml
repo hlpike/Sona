@@ -40,7 +40,7 @@
         <item>I have little interest in doing things</item>
         <item>I feel hopeless</item>
         <item>I sleep too much</item>
-        <item>I don't sleep enough</item>
+        <item>I don\'t sleep enough</item>
         <item>I am working toward a long term goal</item>
         <item>I have good memory</item>
     </array>
@@ -96,14 +96,14 @@
     </string-array>
 
     <string-array name= "recs_daily">
-        <item>Write down one thing you're grateful for</item>
+        <item>Write down one thing you\'re grateful for</item>
         <item>Write down one good thing that happened today</item>
         <item>Wear clothes that make you feel good</item>
         <item>Eat a good meal</item>
         <item>Choose one activity and focus on only that for 30 minutes</item>
         <item>Limit your social media usage by 30 minutes</item>
         <item>Go on a ten minute walk</item>
-        <item>Remoe all electronics before going to sleep</item>
+        <item>Remove all electronics before going to sleep</item>
     </string-array>
 
     <string-array name= "recs_weekly">
