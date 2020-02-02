@@ -9,8 +9,11 @@
     <string name="Resource3">National Domestic Violence Hotline</string>
     <string name="Resource4">National Sexual Assault Hotline</string>
     <string name="title_activity_resources">ResourcesActivity</string>
-    
+
         <!-- slide 1 -->
+    <string name="questionaire">Questionaire</string>
+
+    <!-- slide 1 -->
     <string name="happiness">Happiness (On Scale of 1-3)</string>
     <string name="i_am_happy">I am happy</string>
     <string name="family_happy">My Family makes me happy</string>
@@ -49,14 +52,14 @@
     <string name="scale_2">2</string>
     <string name="scale_3">3</string>
     <string name="next">Next</string>
-    
-    <array name= "recs_now">  
+
+    <array name= "recs_now">
         <item>Write down 3+ good qualities about yourself</item>
         <item>Request from friends, family or loved ones to send you a list of 3+ things they appreciate about you</item>
         <item>Look for an exciting event and write it in your calendar</item>
     </array>
-        
-    <array name= "recs_daily"> 
+
+    <array name= "recs_daily">
         <item>Write down one thing you're grateful for</item>
         <item>Write down one good thing that happened today</item>
         <item>Wear clothes that make you feel good</item>
@@ -66,8 +69,8 @@
         <item>Go on a ten minute walk</item>
         <item>Remoe all electronics before going to sleep</item>
     </array>
-    
-    <array name= "recs_weekly"> 
+
+    <array name= "recs_weekly">
         <item>Yoga class</item>
         <item>Dancing class</item>
         <item>Cycling class</item>
