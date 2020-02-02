@@ -100,6 +100,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
     }
 
     public void updateUI() {
