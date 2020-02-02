@@ -25,17 +25,23 @@
 
     <Button
         android:id="@+id/hub_info2"
-        android:layout_width="wrap_content"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
+        android:background="#81ADC8"
         android:text="@string/info"
+        android:textColor="#AFE059"
+        app:layout_constraintWidth_percent=".33"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/hub_home2"
-        android:layout_width="100dp"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
+        android:background="#81ADC8"
         android:text="@string/home"
+        android:textColor="#AFE059"
+        app:layout_constraintWidth_percent=".33"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -54,20 +60,23 @@
 
     <Button
         android:id="@+id/hub_profile2"
-        android:layout_width="wrap_content"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
+        android:background="#81ADC8"
         android:text="@string/profile"
+        android:textColor="#AFE059"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/hub_info2"
         app:layout_constraintStart_toEndOf="@+id/hub_home2" />
 
     <Button
         android:id="@+id/hub_about_day2"
-        android:layout_width="wrap_content"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
+        android:background="#0EC6C0"
         android:text="@string/feeling"
         android:textAllCaps="false"
-        android:textColorHighlight="#00A87979"
+        android:textColor="#FFFFFF"
         android:textSize="27sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
