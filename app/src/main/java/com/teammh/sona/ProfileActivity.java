@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
@@ -27,30 +28,42 @@ import com.teammh.sona.view.YourResultsActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.squareup.picasso.Picasso;
+import com.teammh.sona.model.User;
+import com.teammh.sona.view.MainActivity;
+
+
 public class ProfileActivity extends AppCompatActivity {
 
-    private Button logOut;
     private Button homeButton;
-    private Button profileButton;
-    private Button infoButton;
     private TextView userTextView;
     private ImageView profileImage;
     private ImageView graphImage;
+
+    private User currUserInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        logOut = (Button)findViewById(R.id.profile_log_out);
         homeButton = (Button)findViewById(R.id.hub_home);
-        profileButton = (Button)findViewById(R.id.hub_profile);
-        infoButton = (Button)findViewById(R.id.hub_info);
         userTextView = (TextView)findViewById(R.id.profile_user);
         profileImage = (ImageView)findViewById(R.id.imageView);
         //graphImage = (ImageView)findViewById(R.id.profile_graph);
 
         BarChart barChart = (BarChart)findViewById(R.id.barChart);
+     
+        Intent intent = getIntent();
+        if (intent != null) {
+            currUserInfo = (User)intent.getSerializableExtra(MainActivity.USER_CODE);
+            userTextView.setText(currUserInfo.getUsername());
+            if (!currUserInfo.getPicURL().isEmpty()) {
+                Picasso.get().load(currUserInfo.getPicURL()).into(profileImage);
+            } else {
+                profileImage.setImageDrawable(getDrawable(R.drawable.sona_transparent_big));
+            }
+        }
 
         barChart.setDrawBarShadow(false);
         barChart.setDrawValueAboveBar(true);
@@ -155,17 +168,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //you can use anything in place of i
-                Intent i = new Intent(ProfileActivity.this, MainActivity.class);
-                startActivity(i);
-
-            }
-        });
-
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,6 +176,10 @@ public class ProfileActivity extends AppCompatActivity {
                 Intent i = new Intent(ProfileActivity.this, ResourcesActivity.class);
                 startActivity(i);
 
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProfileActivity.this.finish();
             }
         });
     }

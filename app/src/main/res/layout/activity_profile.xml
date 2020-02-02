@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/result_text_color"
     tools:context=".ProfileActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="16dp"
         android:contentDescription="user image"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,9 +24,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
-        android:background="#81ADC8"
+        android:background="@color/result_text_color"
         android:text="@string/home"
-        android:textColor="#AFE059"
+        android:textColor="@color/dot_light_screen1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent=".33" />
@@ -36,8 +36,7 @@
         android:id="@+id/hub_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#81ADC8"
-        android:text="@string/info"
+        android:background="@color/result_text_color"
         android:textColor="#AFE059"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,8 +46,7 @@
         android:id="@+id/hub_profile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#81ADC8"
-        android:text="@string/profile"
+        android:background="@color/result_text_color"
         android:textColor="#AFE059"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/hub_info"
@@ -61,37 +59,24 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:text="@string/user"
-        android:textColor="#3376BC"
+        android:textColor="@color/dot_light_screen2"
         android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/pofile_weekly_sum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/profile_log_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        android:text="@string/log_out"
-        android:textAllCaps="false"
-        android:textColor="#AFE059"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_user" />
 
     <TextView
         android:id="@+id/pofile_weekly_sum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/summary"
-        android:textColor="#3376BC"
+        android:textColor="@color/dot_light_screen1"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/barChart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_log_out" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_user" />
 
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/barChart"
@@ -101,8 +86,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
         </com.github.mikephil.charting.charts.BarChart>
+
+    <ImageView
+        android:id="@+id/profile_graph"
+        android:layout_width="270.5dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="68dp"
+        app:layout_constraintBottom_toTopOf="@+id/profile_resources"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pofile_weekly_sum"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[5]" />
 
     <TextView
         android:id="@+id/profile_resources"
@@ -111,7 +107,7 @@
         android:gravity="center"
         android:lines="2"
         android:text="@string/resources"
-        android:textColor="#3376BC"
+        android:textColor="@color/dot_light_screen1"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/hub_profile"
         app:layout_constraintEnd_toEndOf="parent"

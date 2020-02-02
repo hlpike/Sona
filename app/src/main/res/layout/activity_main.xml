@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/result_text_color"
     tools:context=".view.MainActivity">
 
     <TextView
@@ -16,7 +17,7 @@
         android:text="@string/high_there"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#3376BC"
+        android:textColor="@color/dot_light_screen1"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,27 +27,30 @@
 
     <Button
         android:id="@+id/hub_info2"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:background="#81ADC8"
+        android:background="@color/result_text_color"
         android:text="@string/info"
-        android:textColor="#AFE059"
-        app:layout_constraintWidth_percent=".33"
+        android:textColor="@color/dot_light_screen1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent=".33" />
 
     <Button
         android:id="@+id/hub_home2"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:background="#81ADC8"
+        android:background="@color/result_text_color"
         android:text="@string/home"
-        android:textColor="#AFE059"
+        android:textColor="@color/dot_light_screen1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent=".33" />
 
     <ImageView
+        app:strokeWidth="2dp"
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,11 +65,12 @@
 
     <Button
         android:id="@+id/hub_profile2"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:background="#81ADC8"
+        android:background="@color/result_text_color"
         android:text="@string/profile"
-        android:textColor="#AFE059"
+        android:textColor="@color/dot_light_screen1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/hub_info2"
         app:layout_constraintStart_toEndOf="@+id/hub_home2" />
@@ -74,8 +79,9 @@
         android:id="@+id/hub_about_day2"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:background="#afe059"
+        android:background="@color/bg_screen2"
         android:fontFamily="sans-serif"
+        android:padding="8dp"
         android:text="@string/feeling"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -84,4 +90,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/hub_log_out"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/result_text_color"
+        android:text="@string/log_out"
+        android:textColor="@color/dot_light_screen1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

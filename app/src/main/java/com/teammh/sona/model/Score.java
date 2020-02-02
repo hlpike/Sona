@@ -1,10 +1,11 @@
 package com.teammh.sona.model;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Comparator;
 
-public class Score {
+public class Score implements Serializable {
     private Calendar calDate;
     private int score;
 

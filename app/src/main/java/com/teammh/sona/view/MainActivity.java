@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int RC_SIGN_IN = 123;
     public static final int RC_HUB = 234;
     public static final int RC_PROFILE = 456;
+    public static final int RC_QUESTIONS = 789;
 
     public static final String USER_CODE = "USER_CODE";
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button feelingButton;
     private Button homeButton;
+    private Button logOutButton;
     private Button profileButton;
     private Button infoButton;
     private ImageView hubImage;
@@ -60,9 +62,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        Toast.makeText(this,
-                "Firebase connection success",
-                Toast.LENGTH_LONG).show();
 
         createSignInIntent();
 
@@ -72,29 +71,39 @@ public class MainActivity extends AppCompatActivity {
         feelingButton = (Button)findViewById(R.id.hub_about_day2);
         profileButton = (Button)findViewById(R.id.hub_profile2);
         infoButton = (Button)findViewById(R.id.hub_info2);
+        logOutButton = (Button) findViewById(R.id.hub_log_out);
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Clicked profile button");
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.putExtra(USER_CODE, currUserInfo);
                 startActivity(intent);
             }
         });
+
         feelingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Clicked questionnaire button");
                 Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, RC_QUESTIONS);
             }
         });
+
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Clicked info button");
                 Intent intent = new Intent(MainActivity.this, ResourcesActivity.class);
                 startActivity(intent);
+            }
+        });
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
             }
         });
     }
@@ -104,9 +113,6 @@ public class MainActivity extends AppCompatActivity {
         if (currUser != null) {
             username = currUser.getDisplayName();
         }
-        Toast.makeText(MainActivity.this,
-                "User Name: " + username,
-                Toast.LENGTH_LONG).show();
     }
 
     public void createSignInIntent() {
@@ -165,9 +171,6 @@ public class MainActivity extends AppCompatActivity {
                             public void onSuccess(Void aVoid) {
                                 // Write was successful!
                                 Log.d(TAG, "Database write successful!");
-                                Toast.makeText(MainActivity.this,
-                                        "User successfully added",
-                                        Toast.LENGTH_LONG).show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -183,27 +186,12 @@ public class MainActivity extends AppCompatActivity {
                 ValueEventListener userListener = new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        /*
-                        // Get Post object and use the values to update the UI
-                        User userTemp = dataSnapshot.getValue(User.class);
-                        if (userTemp.getEmail().contentEquals(currUserInfo.getEmail())) {
-                            Log.d(TAG, "Database write successful!");
-                            Toast.makeText(MainActivity.this,
-                                    "User successfully added",
-                                    Toast.LENGTH_LONG).show();
-                            currUserInfo = userTemp;
-                        }
-                         */
+
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        // Getting Post failed, log a message
-                        Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                        // [START_EXCLUDE]
-                        Toast.makeText(MainActivity.this, "Failed to load post.",
-                                Toast.LENGTH_LONG).show();
-                        // [END_EXCLUDE]
+
                     }
                 };
                 usersRef.addValueEventListener(userListener);
@@ -214,9 +202,17 @@ public class MainActivity extends AppCompatActivity {
                 // ...
                 Log.d(TAG, "Sign-in failed");
             }
-        } else if (requestCode == RC_HUB) {
-            //user has clicked log out, wants to be signed out
-            signOut();
+        } else if (requestCode == RC_QUESTIONS) {
+           //user has answered questionnaire?
+            if (resultCode == RESULT_OK) {
+                Score score = (Score)data.getSerializableExtra(WelcomeActivity.EXTRA_SCORE);
+                currUserInfo.addScore(score);
+                Intent intent = new Intent(MainActivity.this, YourResultsActivity.class);
+                intent.putExtra(USER_CODE, currUserInfo);
+                startActivity(intent);
+            } else {
+                Log.d(TAG, "Questionnaire aborted");
+            }
         }
     }
 }
