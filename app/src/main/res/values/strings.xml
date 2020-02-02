@@ -3,14 +3,27 @@
     <string name="Title1">Resources</string>
 
     <string name="sign_out">Sign Out</string>
+    <string name="sign_in">Sign In</string>
+    <string name="high_there">Hi there!</string>
+    <string name="home">Home</string>
+    <string name="info">Info</string>
+
+    <string name="profile">Profile</string>
+    <string name="feeling">How are you feeling?</string>
+    <string name="user">User Name</string>
+    <string name="log_out">Log Out</string>
+    <string name="summary">Weekly Summary</string>
+    <string name="graph">Graph</string>
+    <string name="resources">Check out the resources to continue improving!</string>
 
     <string name="Resource1">National Suicide Prevention Lifeline</string>
     <string name="Resource2">Crisis Text Line</string>
     <string name="Resource3">National Domestic Violence Hotline</string>
     <string name="Resource4">National Sexual Assault Hotline</string>
     <string name="title_activity_resources">ResourcesActivity</string>
-    
-    <array name="questionnaire"> 
+
+
+    <array name="questionnaire">
         <item>I am happy</item>
         <item>My family makes me happy</item>
         <item>My friends make me happy</item>
@@ -18,7 +31,7 @@
         <item>I am pleased with the way I am</item>
         <item>I am pleased with my approach to life</item>
         <item>I am rarely interested in other people</item>
-        
+
         <item>I feel tired/low energy</item>
         <item>I have feelings of guilt</item>
         <item>I I feel like a failure</item>
@@ -30,14 +43,16 @@
         <item>I am working toward a long term goal</item>
         <item>I have good memory</item>
     </array>
-    
-    <array name= "recs_now">  
+
+    <array name="recs_now">
         <item>Write down 3+ good qualities about yourself</item>
-        <item>Request from friends, family or loved ones to send you a list of 3+ things they appreciate about you</item>
+        <item>Request from friends, family or loved ones to send you a list of 3+ things they
+            appreciate about you
+        </item>
         <item>Look for an exciting event and write it in your calendar</item>
     </array>
-        
-    <array name= "recs_daily"> 
+
+    <array name="recs_daily">
         <item>Write down one thing you're grateful for</item>
         <item>Write down one good thing that happened today</item>
         <item>Wear clothes that make you feel good</item>
@@ -47,8 +62,8 @@
         <item>Go on a ten minute walk</item>
         <item>Remoe all electronics before going to sleep</item>
     </array>
-    
-    <array name= "recs_weekly"> 
+
+    <array name="recs_weekly">
         <item>Yoga class</item>
         <item>Dancing class</item>
         <item>Cycling class</item>
