@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button feelingButton;
     private Button homeButton;
+    private Button logOutButton;
     private Button profileButton;
     private Button infoButton;
     private ImageView hubImage;
@@ -61,9 +62,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        Toast.makeText(this,
-                "Firebase connection success",
-                Toast.LENGTH_LONG).show();
 
         createSignInIntent();
 
@@ -73,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         feelingButton = (Button)findViewById(R.id.hub_about_day2);
         profileButton = (Button)findViewById(R.id.hub_profile2);
         infoButton = (Button)findViewById(R.id.hub_info2);
+        logOutButton = (Button) findViewById(R.id.hub_log_out);
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,9 +107,6 @@ public class MainActivity extends AppCompatActivity {
         if (currUser != null) {
             username = currUser.getDisplayName();
         }
-        Toast.makeText(MainActivity.this,
-                "User Name: " + username,
-                Toast.LENGTH_LONG).show();
     }
 
     public void createSignInIntent() {
@@ -169,9 +165,6 @@ public class MainActivity extends AppCompatActivity {
                             public void onSuccess(Void aVoid) {
                                 // Write was successful!
                                 Log.d(TAG, "Database write successful!");
-                                Toast.makeText(MainActivity.this,
-                                        "User successfully added",
-                                        Toast.LENGTH_LONG).show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -187,27 +180,12 @@ public class MainActivity extends AppCompatActivity {
                 ValueEventListener userListener = new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        /*
-                        // Get Post object and use the values to update the UI
-                        User userTemp = dataSnapshot.getValue(User.class);
-                        if (userTemp.getEmail().contentEquals(currUserInfo.getEmail())) {
-                            Log.d(TAG, "Database write successful!");
-                            Toast.makeText(MainActivity.this,
-                                    "User successfully added",
-                                    Toast.LENGTH_LONG).show();
-                            currUserInfo = userTemp;
-                        }
-                         */
+
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        // Getting Post failed, log a message
-                        Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                        // [START_EXCLUDE]
-                        Toast.makeText(MainActivity.this, "Failed to load post.",
-                                Toast.LENGTH_LONG).show();
-                        // [END_EXCLUDE]
+
                     }
                 };
                 usersRef.addValueEventListener(userListener);

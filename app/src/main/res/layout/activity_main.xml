@@ -27,6 +27,7 @@
 
     <Button
         android:id="@+id/hub_info2"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:background="@color/result_text_color"
@@ -38,6 +39,7 @@
 
     <Button
         android:id="@+id/hub_home2"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:background="@color/result_text_color"
@@ -63,6 +65,7 @@
 
     <Button
         android:id="@+id/hub_profile2"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:background="@color/result_text_color"
@@ -78,6 +81,7 @@
         android:layout_height="wrap_content"
         android:background="@color/bg_screen2"
         android:fontFamily="sans-serif"
+        android:padding="8dp"
         android:text="@string/feeling"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -86,4 +90,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/hub_log_out"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/result_text_color"
+        android:text="@string/log_out"
+        android:textColor="@color/dot_light_screen1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
