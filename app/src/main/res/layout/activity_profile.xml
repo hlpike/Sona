@@ -21,12 +21,17 @@
 
     <Button
         android:id="@+id/hub_home"
+        android:layout_height="wrap_content"
         android:layout_width="100dp"
         android:background="#81ADC8"
         android:text="@string/home"
         android:textColor="#AFE059"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
     <Button
         android:id="@+id/hub_info"
@@ -91,10 +96,10 @@
         android:id="@+id/profile_graph"
         android:layout_width="270.5dp"
         android:layout_height="270dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="303dp"
+        app:layout_constraintTop_toBottomOf="@+id/pofile_weekly_sum"
         tools:srcCompat="@tools:sample/backgrounds/scenic[5]" />
 
     <TextView
