@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".view.ResourcesActivity"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        tools:context=".view.ResourcesActivity">
 
         <LinearLayout
             android:id="@+id/ResourcesPage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#3376bc"
+            android:background="@color/result_text_color"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +38,7 @@
                 android:id="@+id/NSPL"
                 android:layout_width="300sp"
                 android:layout_height="50sp"
-                android:background="#0ec6c0"
+                android:background="@color/bg_screen2"
                 android:gravity="center"
                 android:text="National Suicide Prevention Lifeline"
                 android:textColor="#FFFFFF"
@@ -79,7 +78,7 @@
                 android:id="@+id/CTL"
                 android:layout_width="300sp"
                 android:layout_height="50sp"
-                android:background="#0ec6c0"
+                android:background="@color/bg_screen2"
                 android:gravity="center"
                 android:text="Crisis Text Line"
                 android:textColor="#FFFFFF"
@@ -110,7 +109,7 @@
                 android:id="@+id/NDVH"
                 android:layout_width="300sp"
                 android:layout_height="50sp"
-                android:background="#0ec6c0"
+                android:background="@color/bg_screen2"
                 android:gravity="center"
                 android:text="National Domestic Violence Hotline"
                 android:textColor="#FFFFFF"
@@ -356,7 +355,7 @@
                 android:background="#0ec6c0"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                app:title="Tools"/>
+                app:title="Tools" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
