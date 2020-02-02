@@ -1,33 +1,359 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.ResourcesActivity">
+    tools:context=".view.ResourcesActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
+        android:id="@+id/ResourcesPage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:background="#778ba5"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="match_parent"
+            android:layout_height="75sp"
+            android:gravity="center"
+            android:text="Resources"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/NSPL"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="National Suicide Prevention Lifeline"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/NSPL1"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Call 1(800)-273-TALK (8255)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/NSPL2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Connects you with a crisis center in the Lifeline network closest to your location"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/NSPL3"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="Your call is confidential and free"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/CTL"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="Crisis Text Line"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/CTL1"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Text NAMI to 741-741"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/CTL2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="Connect with a trained crisis counselor to receive free, 24/7 crisis support via text message"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/NDVH"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="National Domestic Violence Hotline"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/NDVH1"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Call 1(800)-799-SAFE (7233)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/NDVH2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="Support to anyone experiencing domestic violence or seeking resources and information. Help is available in Spanish and other languages"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/NSAH"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="National Sexual Assault Hotline"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/NSAH2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Call 1(800)-656-HOPE (4673)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/NSAH1"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="Connect with a trained staff member from a sexual assault service provider in your area that offers access to a range of free services. Crisis chat support is available at Online Hotline"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/TTP"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="The Trevor Project"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TTP2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Call 1(866)-488-7386"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/TTP3"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="Confidential and secure service that provides live help to LGBTQ youth"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/VCL"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="Veterans crisis Line"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/VCL2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Call 1(800)-273-8255; TTY: 1-800-799-4889"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/VCL3"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="Connects veterans in crisis (and their families and friends) with qualified, caring Department of Veterans Affairs responders through a confidential, toll-free hotline, online chat, or text"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/STRH"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="SAMHSA Treatment Referral Helpline"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/STRH2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Call 1(877)-SAMSHA7 (877-726-4727)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/STRH3"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="1-800-662-HELP (4357) - National helpline, TTY: 800-487-4889"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/STRH4"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Confidential, free, 24-hour-a-day, 365-day-a-year"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/STRH5"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Provides referrals to local treatment facilities, support groups, and community-based organizations"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/STRH6"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="Get general information on mental health and locate treatment services in your area. Speak to a live person, Monday through Friday from 8 a.m. to 8 p.m. EST."
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/NRS"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="National Runaway Safeline"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/NRS2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Call 1(800)-786-2929"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/NRS3"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="The National Runaway Safeline (NRS) is here to listen whether you are thinking of running away or already have. Our services are confidential and nonjudgmental"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/C211"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:background="#efc08b"
+            android:gravity="center"
+            android:text="Call 211 "
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/C2112"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="20sp"
+            android:text="Speak with a professional in your area to find help regarding the following topics: Crisis, Emergencies and disasters, food, health, housing and utilities, human trafficking, jobs, reentry, and veterans"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/C2113"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20sp"
+            android:text="24/7/365; 180 languages; completely confidential"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_resources" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:layout_height="wrap_content"
+            android:background="#efc08b"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:title="Tools"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

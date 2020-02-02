@@ -3,6 +3,8 @@
     <string name="Title1">Resources</string>
 
     <string name="sign_out">Sign Out</string>
+    <string name="increment">Increment</string>
+    <string name="var_label">Variable:</string>
     <string name="sign_in">Sign In</string>
     <string name="high_there">Hi there!</string>
     <string name="home">Home</string>
@@ -22,6 +24,26 @@
     <string name="Resource4">National Sexual Assault Hotline</string>
     <string name="title_activity_resources">ResourcesActivity</string>
 
+    <array name="questionnaire">
+        <item>I am happy</item>
+        <item>My family makes me happy</item>
+        <item>My friends make me happy</item>
+        <item>My career makes me happy</item>
+        <item>I am pleased with the way I am</item>
+        <item>I am pleased with my approach to life</item>
+        <item>I am rarely interested in other people</item>
+
+        <item>I feel tired/low energy</item>
+        <item>I have feelings of guilt</item>
+        <item>I I feel like a failure</item>
+        <item>I have difficulty making decisions</item>
+        <item>I have little interest in doing things</item>
+        <item>I feel hopeless</item>
+        <item>I sleep too much</item>
+        <item>I don't sleep enough</item>
+        <item>I am working toward a long term goal</item>
+        <item>I have good memory</item>
+    </array>
         <!-- slide 1 -->
     <string name="questionaire">Questionaire</string>
 
