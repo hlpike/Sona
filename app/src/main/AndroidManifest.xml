@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".view.HubActivity" />
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".view.HubActivity"></activity>
         <activity
             android:name=".view.ResourcesActivity"
             android:label="@string/title_activity_resources"

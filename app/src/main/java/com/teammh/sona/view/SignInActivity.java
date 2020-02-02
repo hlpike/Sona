@@ -30,7 +30,7 @@ public class SignInActivity extends AppCompatActivity {
     private FirebaseUser currUser;
 
     private Button signOut;
-
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +76,7 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
          */
-    }
+    /*}
 
     @Override
     public void onStart() {
@@ -146,5 +146,5 @@ public class SignInActivity extends AppCompatActivity {
                 Log.d(TAG, "Sign-in failed");
             }
         }
-    }
+    }*/
 }

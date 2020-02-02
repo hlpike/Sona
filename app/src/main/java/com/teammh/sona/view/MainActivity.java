@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.teammh.sona.R;
+import com.teammh.sona.model.User;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser currUser;
+    private FirebaseDatabase mDatabase;
+    private User currUserInfo;
 
     private Button signOut;
     private Button increment;
@@ -73,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
         //create variable to interact with database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        mDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = mDatabase.getReference("message");
 
         // Write a message to the database
         myRef.setValue("Hello, World!");
@@ -96,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+         */
     }
 
     public void updateUI() {
@@ -147,10 +152,15 @@ public class MainActivity extends AppCompatActivity {
                 // Successfully signed in
                 currUser = FirebaseAuth.getInstance().getCurrentUser();
                 Log.d(TAG, "Sign in successful. Username: " + currUser.getDisplayName());
+
                 updateUI();
 
-                //recieve variable from database and fill it in
-                mAuth.get
+                //update current user info
+                currUserInfo = new User(currUser.getDisplayName(), currUser.getEmail());
+                currUserInfo.setPicURL(currUser.getPhotoUrl().toString());
+
+                //check for user in database
+                //mDatabase.child("users").child(currUser.getUid()).setValue(currUserInfo);
 
                 signOut.setEnabled(true);
             } else {
