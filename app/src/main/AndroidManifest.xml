@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_sona_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".view.YourResultsActivity"></activity>
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".WelcomeActivity" />
         <activity
             android:name=".view.ResourcesActivity"
