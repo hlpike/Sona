@@ -32,6 +32,8 @@ public class WelcomeActivity extends AppCompatActivity {
         private Button btnNext;
         private PrefManager prefManager;
 
+        public static String EXTRA_SCORE = "EXTRA_SCORE";
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);

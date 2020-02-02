@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int RC_SIGN_IN = 123;
     public static final int RC_HUB = 234;
     public static final int RC_PROFILE = 456;
+    public static final int RC_QUESTIONS = 789;
 
     public static final String USER_CODE = "USER_CODE";
 
@@ -78,22 +79,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, "Clicked profile button");
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.putExtra(USER_CODE, currUserInfo);
                 startActivity(intent);
             }
         });
+
         feelingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Clicked questionnaire button");
                 Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, RC_QUESTIONS);
             }
         });
+
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Clicked info button");
-                Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, ResourcesActivity.class);
                 startActivity(intent);
             }
         });
@@ -214,9 +218,17 @@ public class MainActivity extends AppCompatActivity {
                 // ...
                 Log.d(TAG, "Sign-in failed");
             }
-        } else if (requestCode == RC_HUB) {
-            //user has clicked log out, wants to be signed out
-            signOut();
+        } else if (requestCode == RC_QUESTIONS) {
+           //user has answered questionnaire?
+            if (resultCode == RESULT_OK) {
+                Score score = (Score)data.getSerializableExtra(WelcomeActivity.EXTRA_SCORE);
+                currUserInfo.addScore(score);
+                Intent intent = new Intent(MainActivity.this, YourResultsActivity.class);
+                intent.putExtra(USER_CODE, currUserInfo);
+                startActivity(intent);
+            } else {
+                Log.d(TAG, "Questionnaire aborted");
+            }
         }
     }
 }
