@@ -2,6 +2,9 @@
     <string name="app_name">MyApp</string>
     <string name="Title1">Resources</string>
 
+    <string name="increment">increment</string>
+    <string name="var_label">Variable:</string>
+
     <string name="sign_out">Sign Out</string>
     <string name="increment">Increment</string>
     <string name="var_label">Variable:</string>
