@@ -3,7 +3,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.ResourcesActivity"
@@ -13,7 +12,7 @@
         android:id="@+id/ResourcesPage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#778ba5"
+        android:background="#3376bc"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
