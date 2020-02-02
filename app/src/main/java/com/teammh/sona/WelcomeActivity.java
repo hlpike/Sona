@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.teammh.sona.view.MainActivity;
+import com.teammh.sona.view.YourResultsActivity;
 
 import static android.view.View.GONE;
 
@@ -74,7 +75,19 @@ public class WelcomeActivity extends AppCompatActivity {
             myViewPagerAdapter = new MyViewPagerAdapter();
             viewPager.setAdapter(myViewPagerAdapter);
             viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+
+            btnNext.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    //you can use anything in place of i
+                    Intent i = new Intent(WelcomeActivity.this, YourResultsActivity.class);
+                    startActivity(i);
+
+                }
+            });
         }
+
 
         private void addBottomDots(int currentPage) {
             dots = new TextView[layouts.length];
