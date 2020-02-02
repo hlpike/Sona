@@ -205,8 +205,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (requestCode == RC_QUESTIONS) {
            //user has answered questionnaire?
             if (resultCode == RESULT_OK) {
-                Score score = (Score)data.getSerializableExtra(WelcomeActivity.EXTRA_SCORE);
-                currUserInfo.addScore(score);
                 Intent intent = new Intent(MainActivity.this, YourResultsActivity.class);
                 intent.putExtra(USER_CODE, currUserInfo);
                 startActivity(intent);

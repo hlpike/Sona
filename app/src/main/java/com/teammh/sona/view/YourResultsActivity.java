@@ -150,22 +150,16 @@ public class YourResultsActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //you can use anything in place of i
-                Intent i = new Intent(YourResultsActivity.this, MainActivity.class);
-                startActivity(i);
-
+                finish();
             }
         });
 
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 //you can use anything in place of i
                 Intent i = new Intent(YourResultsActivity.this, ResourcesActivity.class);
                 startActivity(i);
-
             }
         });
     }

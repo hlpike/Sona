@@ -53,7 +53,8 @@ public class ProfileActivity extends AppCompatActivity {
         //graphImage = (ImageView)findViewById(R.id.profile_graph);
 
         BarChart barChart = (BarChart)findViewById(R.id.barChart);
-     
+
+        /*
         Intent intent = getIntent();
         if (intent != null) {
             currUserInfo = (User)intent.getSerializableExtra(MainActivity.USER_CODE);
@@ -64,6 +65,14 @@ public class ProfileActivity extends AppCompatActivity {
                 profileImage.setImageDrawable(getDrawable(R.drawable.sona_transparent_big));
             }
         }
+         */
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         barChart.setDrawBarShadow(false);
         barChart.setDrawValueAboveBar(true);
@@ -156,31 +165,5 @@ public class ProfileActivity extends AppCompatActivity {
         barChart.getXAxis().setAxisMinValue(startYear);
         barChart.groupBars(startYear, groupSpace, barSpace);
         barChart.invalidate();
-
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //you can use anything in place of i
-                Intent i = new Intent(ProfileActivity.this, MainActivity.class);
-                startActivity(i);
-
-            }
-        });
-
-        infoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //you can use anything in place of i
-                Intent i = new Intent(ProfileActivity.this, ResourcesActivity.class);
-                startActivity(i);
-
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ProfileActivity.this.finish();
-            }
-        });
     }
 }

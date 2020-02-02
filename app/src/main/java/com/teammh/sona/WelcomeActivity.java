@@ -79,11 +79,8 @@ public class WelcomeActivity extends AppCompatActivity {
             btnNext.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    //you can use anything in place of i
-                    Intent i = new Intent(WelcomeActivity.this, YourResultsActivity.class);
-                    startActivity(i);
-
+                    setResult(RESULT_OK, null);
+                    finish();
                 }
             });
         }
